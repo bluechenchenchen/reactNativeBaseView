@@ -27,19 +27,22 @@ const tabs = {
   Home: {
     name: 'Home',
     text: '首页',
-
+    com: HomeView
   },
   Message: {
     name: 'Message',
     text: '消息',
+    com: MessageView
   },
   Service: {
     name: 'Service',
     text: '客服',
+    com: ServiceView
   },
   Center: {
     name: 'Center',
     text: '个人中心',
+    com: About
   }
 }
 
@@ -63,10 +66,13 @@ const Tabs = () => {
       
     })}
     >
-        <Tab.Screen name="Home" component={HomeView} />
-        <Tab.Screen name="Message" component={MessageView} />
-        <Tab.Screen name="Service" component={ServiceView} />
-        <Tab.Screen name="Center" component={About} />
+       {
+         Object.keys(tabs).map(key => {
+           return (
+            <Tab.Screen name={tabs[key].name} component={tabs[key].com} key={tabs[key].name}/>
+           )
+         })
+       }
     </Tab.Navigator>
   )
 
