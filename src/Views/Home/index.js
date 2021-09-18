@@ -16,12 +16,25 @@ import {
   Platform,
   DeviceEventEmitter,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
-
+  const navigation = useNavigation();
   return (
     <View>
       <Text >Home</Text>
+
+      <TouchableOpacity 
+      onPress={() => {
+        navigation.navigate('Browser')
+      }}
+      style={{
+        width: 100,
+        height: 30,
+        lineHeight: 30,
+        backgroundColor: 'red'
+      }}><Text>浏览器</Text>
+    </TouchableOpacity>
     </View>
   )
 }
