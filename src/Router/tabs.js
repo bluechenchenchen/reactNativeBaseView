@@ -69,7 +69,7 @@ const Tabs = () => {
        {
          Object.keys(tabs).map(key => {
            return (
-            <Tab.Screen name={tabs[key].name} component={tabs[key].com} key={tabs[key].name}/>
+            <Tab.Screen name={tabs[key].text} component={tabs[key].com} key={tabs[key].name}/>
            )
          })
        }
